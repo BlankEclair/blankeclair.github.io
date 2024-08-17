@@ -34,10 +34,12 @@ These are alternative, more user-friendly way to view online services.
 * [Hydroxide](https://github.com/emersion/hydroxide): A transparent IMAP/SMTP/CardDAV proxy for Protonmail.
 * [RSS Bridge](https://github.com/RSS-Bridge/rss-bridge): A PHP server that scrapes websites to add back RSS feeds for them.
 * [SimpleLogin](https://simplelogin.io): A email aliasing service that hides your email address from sites.
+* [units](https://www.gnu.org/software/units/units.html): A CLI tool that converts between units.
 * [wget-at](https://github.com/ArchiveTeam/wget-lua): A fork of wget with Lua and better WARC support.
 
 ## Services I use
 * [Catbox](https://catbox.moe): A simple, "raw" file sharing service (also has support for temporary files on its sister site, [Litterbox](https://litterbox.catbox.moe)).
+* [dict.org](https://dict.org/bin/Dict): A no-frills dictionary.
 * [http.cat](https://http.cat): HTTP status codes, but as cats :3
 </c:markdown>
 <c:include>_footer.ct</c:include>
