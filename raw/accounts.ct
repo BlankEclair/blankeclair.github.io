@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<c:include>_head_tags.ct</c:include>
+<title>Accounts - BlankEclair's Spidersite</title>
+</head>
+
+<body>
+<c:include>_header.ct</c:include>
+<c:markdown>
+# Accounts
+
+You can contact me via:
+* **Matrix:** [@blankeclair:catgirl.cloud](https://matrix.to/#/@blankeclair:catgirl.cloud)
+* **IRC:** BlankEclair at libera.chat
+* **Email:** blankeclair at the domain disroot.org
+
+Additionally, some services below have methods to contact me privately. I'll probably see it, but it'd be a bit unorthodox.
+
+I also control the following accounts (non-exhaustive):
+* **archive.org:** [@blankeclair](https://archive.org/details/@blankeclair)
+* **Average Codestuff:** [BlankEclair](https://git.average.name/BlankEclair)
+* **Comicfury:** [BlankEclair](https://comicfury.com/profile.php?username=BlankEclair)
+* **Fediverse:** [@BlankEclair@transfem.social](https://transfem.social/@BlankEclair)
+* **Github:** [BlankEclair](https://github.com/BlankEclair)
+* **Miraheze:** [User:BlankEclair](https://meta.miraheze.org/wiki/User:BlankEclair) and [User:BlankEclairBot](https://meta.miraheze.org/wiki/User:BlankEclairBot)
+* **Wikimedia:** [User:BlankEclair](https://meta.wikimedia.org/wiki/User:BlankEclair)
+</c:markdown>
+<c:include>_footer.ct</c:include>
+</body>
+</html>

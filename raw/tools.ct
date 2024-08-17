@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<c:include>_head_tags.ct</c:include>
+<title>Tools - BlankEclair's Spidersite</title>
+</head>
+
+<body>
+<c:include>_header.ct</c:include>
+<c:markdown>
+# Tools
+(None of these lists are exhaustive)
+
+## Tools I made
+* [Claire's Shenanigans Proxy](https://git.average.name/BlankEclair/csp): A basic TCP proxy with HTTP for the handshake.
+* [Claire's Templater](https://git.average.name/BlankEclair/site/branch/main/ct.py): A primitive, kinda cursed templating engine (which powers this static site!)
+* [CustomSearchProfiles](https://www.mediawiki.org/wiki/Extension:CustomSearchProfiles): A MediaWiki extension that adds extra search profiles to Special:Search.
+* [GoogleForms](https://www.mediawiki.org/wiki/Extension:GoogleForms): A MediaWiki extension that allows users to embed Google Forms.
+* [Rainverse Wiki Image Downscaler](https://shrink.rainverse.wiki): A web-based tool that downscales images to 0.1 MP. Uses (and requires) vanilla Javascript.
+* [Rainverse Wiki Birthdays](https://blankeclair.github.io/rvw-birthdays/): A web-based tool that lists all of the characters in the Rainverse and their birthdays. Uses (and requires) vanilla Javascript.
+
+## Tools I use (that I didn't make)
+
+### Frontends
+These are alternative, more user-friendly way to view online services.
+* [Breezewiki](https://breezewiki.com): An alternative frontend to Fandom.
+* [Priviblur](https://github.com/syeopite/priviblur): An alternative frontend to Tumblr.
+* [Quetre](https://github.com/zyachel/quetre): An alternative frontend to Quora.
+* [Rimgo](https://codeberg.org/rimgo/rimgo): An alternative frontend to Imgur.
+* [Scribe](https://sr.ht/~edwardloveall/Scribe): An alternative frontend to Medium.
+
+### Miscellaneous
+* [Email OAUTH 2.0 Proxy](https://github.com/simonrob/email-oauth2-proxy): A transparent IMAP and SMTP proxy for email servers that require OAUTH for authentication.
+* [Hydroxide](https://github.com/emersion/hydroxide): A transparent IMAP/SMTP/CardDAV proxy for Protonmail.
+* [RSS Bridge](https://github.com/RSS-Bridge/rss-bridge): A PHP server that scrapes websites to add back RSS feeds for them.
+* [SimpleLogin](https://simplelogin.io): A email aliasing service that hides your email address from sites.
+* [wget-at](https://github.com/ArchiveTeam/wget-lua): A fork of wget with Lua and better WARC support.
+
+## Services I use
+* [Catbox](https://catbox.moe): A simple, "raw" file sharing service (also has support for temporary files on its sister site, [Litterbox](https://litterbox.catbox.moe)).
+* [http.cat](https://http.cat): HTTP status codes, but as cats :3
+</c:markdown>
+<c:include>_footer.ct</c:include>
+</body>
+</html>

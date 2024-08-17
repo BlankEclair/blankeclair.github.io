@@ -1,0 +1,49 @@
+:root {
+    --background-color: white;
+    --text-color: black;
+
+    --accent-color-dark: purple;
+    --accent-color-bright: magenta;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: black;
+        --text-color: white;
+
+        --accent-color-dark: magenta;
+        --accent-color-bright: pink;
+    }
+}
+
+html {
+    font-family: sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+a {
+    color: var(--accent-color-dark);
+}
+a:hover {
+    color: var(--accent-color-bright);
+}
+
+.permalink a {
+    text-decoration: none;
+    opacity: 0;
+}
+:is(h1, h2, h3, h4, h5, h6):is(:hover, :focus-within) .permalink a {
+    opacity: revert;
+}
+
+.header {
+    font-weight: bold;
+}
+.header a {
+    font-weight: normal;
+}
+
+summary:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

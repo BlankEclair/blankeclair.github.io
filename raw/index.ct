@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<c:include>_head_tags.ct</c:include>
+<title>BlankEclair's Spidersite</title>
+
+<link rel="me" href="https://transfem.social/@BlankEclair">
+<style>
+h1 {
+    margin-block-end: 0;
+}
+h1 + p {
+    margin-block: 0;
+}
+</style>
+</head>
+
+<body>
+<c:include>_header.ct</c:include>
+<c:markdown>
+# Welcome to my spidersite!
+<small>(Get it? Spidersite? Website? I have no idea if this joke makes sense or not)</small>
+
+I'm Claire (she/her), though I also go by BlankEclair. I'm also referred to as Eclair, or Blank—I don't really mind that much as long as I know you're referring to me.
+
+I'm a bisexual transfemme <s>masochist</s> programmer, and my current obsessions include maintaining the [Rainverse Wiki](https://rainverse.wiki), helping out technically on [Miraheze](https://miraheze.org) globally, and reading [_My Impossible Soulmate_](https://rainverse.wiki/wiki/My_Impossible_Soulmate),
+
+I am also apparently cursed (seriously, has there been a thing I've used that does not have a bug?), but to make up for it I can apparently <s>cast magic</s> write and read (reasonable) regular expressions.
+</c:markdown>
+<c:include>_footer.ct</c:include>
+</body>
+</html>
