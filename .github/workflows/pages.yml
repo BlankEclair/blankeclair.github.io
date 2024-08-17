@@ -1,3 +1,7 @@
+on:
+  push:
+    - main
+
 jobs:
   deploy:
     environment:
