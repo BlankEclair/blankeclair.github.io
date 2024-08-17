@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<c:include>_head_tags.ct</c:include>
+<title>Reverse Searchers - BlankEclair's Spidersite</title>
+
+<style>
+body.no-script .script-only {
+    display: none;
+}
+th {
+    text-align: left;
+}
+table, th, td {
+    border: 1px solid var(--text-color);
+    border-collapse: collapse;
+    padding: 3px;
+}
+</style>
+<script defer src="/rs/reverse.js"></script>
+<script type="application/json"><c:include>rs/sources.json</c:include></script>
+</head>
+
+<body class="no-script">
+<c:include>_header.ct</c:include>
+<c:markdown>
+# Reverse Image Searchers
+</c:markdown>
+
+<p class="script-only">
+    <label for="url">Image URL: </label><input type="url" id="url">
+    <br>
+    You can enter an image above, and the links below will take you directly to reverse search that image.
+</p>
+<noscript>
+    <p>If Javascript is enabled, you can input an image URL to update the links below to directly reverse search that image.</p>
+</noscript>
+
+<table>
+    <tr><th>Type</th><th>Searchers</th></tr>
+    <c:python>
+    import json
+    import html
+
+    with open("rs/sources.json") as file:
+        all_sources = json.load(file)
+
+    text = ""
+    for type, sources in all_sources.items():
+        text += '<tr class="source-line">'
+        text += f"<td>{html.escape(type)}</td>"
+        text += "<td>"
+        for i, (source_name, source_info) in enumerate(sources.items()):
+            prefix = ", " if i else " "
+            text += f'{prefix}<a href="{html.escape(source_info["home"])}">{html.escape(source_name)}</a>'
+        text += "</td>"
+        text += "</tr>"
+    return text
+    </c:python>
+</table>
+
+<p>If you're desperate and the generic reverse searchers aren't helping, try the image on the more specific ones.</p>
+
+<c:include>_footer.ct</c:include>
+</body>
+</html>

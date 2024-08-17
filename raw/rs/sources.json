@@ -1,0 +1,42 @@
+{
+    "Anime screenshots": {
+        "trace.moe": {
+            "home": "https://trace.moe",
+            "url": "https://trace.moe/?url=%s"
+        }
+    },
+    "Anime-style drawings": {
+        "Danbooru": {
+            "home": "https://danbooru.donmai.us",
+            "url": "https://danbooru.donmai.us/iqdb_queries?search[url]=%s"
+        },
+        "SauceNAO": {
+            "home": "https://saucenao.com",
+            "url": "https://saucenao.com/search.php?url=%s"
+        }
+    },
+    "Furry-style drawings": {
+        "FuzzySearch": {
+            "home": "https://fuzzysearch.net",
+            "url": "https://fuzzysearch.net/#url=%s"
+        },
+        "kheina.com": {
+            "home": "https://kheina.com",
+            "url": "https://kheina.com/?url=%s"
+        }
+    },
+    "Generic": {
+        "Google Lens": {
+            "home": "https://lens.google.com",
+            "url": "https://lens.google.com/uploadbyurl?url=%s"
+        },
+        "Yandex": {
+            "home": "https://yandex.com/images/search",
+            "url": "https://yandex.com/images/search?rpt=imageview&url=%s"
+        },
+        "Tineye": {
+            "home": "https://tineye.com",
+            "url": "https://tineye.com/search?url=%s"
+        }
+    }
+}

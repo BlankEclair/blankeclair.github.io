@@ -44,16 +44,18 @@ def _make_heading_linkable(match: re.Match) -> str:
             f'</h{level}>')
 
 def _handle_tag(match: re.Match, locals: dict[str]) -> str:
-    body = match.group(2)
+    body = textwrap.dedent(match.group(2).strip("\n"))
     match match.group(1):
         case "comment":
             return ""
         case "include":
+            is_ct_template = body.endswith(".ct")
             with open(body) as file:
                 body = file.read()
-            return parse(body, locals)
+            if is_ct_template:
+                body = parse(body, locals)
+            return body
         case "markdown":
-            body = textwrap.dedent(body.strip("\n"))
             body = commonmark.commonmark(body)
             return HEADING_RE.sub(_make_heading_linkable, body)
         case "python":

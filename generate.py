@@ -29,4 +29,6 @@ for dirpath, dirnames, filenames in os.walk("."):
                 file.write(contents)
         else:
             shutil.copyfile(
-                filename, os.path.join(PUBLIC_PATH, dirpath, filename))
+                os.path.join(dirpath, filename),
+                os.path.join(PUBLIC_PATH, dirpath, filename),
+            )

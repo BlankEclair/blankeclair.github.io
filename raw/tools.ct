@@ -18,6 +18,7 @@
 * [GoogleForms](https://www.mediawiki.org/wiki/Extension:GoogleForms): A MediaWiki extension that allows users to embed Google Forms.
 * [Rainverse Wiki Image Downscaler](https://shrink.rainverse.wiki): A web-based tool that downscales images to 0.1 MP. Uses (and requires) vanilla Javascript.
 * [Rainverse Wiki Birthdays](https://blankeclair.github.io/rvw-birthdays/): A web-based tool that lists all of the characters in the Rainverse and their birthdays. Uses (and requires) vanilla Javascript.
+* [Reverse Image Searchers](/rs/): An index of reverse image searchers, with an optional text box to prefill an image URL. Optionally uses vanilla Javascript.
 
 ## Tools I use (that I didn't make)
 
