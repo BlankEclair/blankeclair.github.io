@@ -13,7 +13,7 @@
 
 ## Tools I made
 * [Claire's Shenanigans Proxy](https://git.average.name/BlankEclair/csp): A basic TCP proxy with HTTP for the handshake.
-* [Claire's Templater](https://git.average.name/BlankEclair/site/branch/main/ct.py): A primitive, kinda cursed templating engine (which powers this static site!)
+* [Claire's Templater](https://git.average.name/BlankEclair/site/src/branch/main/ct.py): A primitive, kinda cursed templating engine (which powers this static site!)
 * [CustomSearchProfiles](https://www.mediawiki.org/wiki/Extension:CustomSearchProfiles): A MediaWiki extension that adds extra search profiles to Special:Search.
 * [GoogleForms](https://www.mediawiki.org/wiki/Extension:GoogleForms): A MediaWiki extension that allows users to embed Google Forms.
 * [Rainverse Wiki Image Downscaler](https://shrink.rainverse.wiki): A web-based tool that downscales images to 0.1 MP. Uses (and requires) vanilla Javascript.
