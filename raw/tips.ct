@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<c:include>_head_tags.ct</c:include>
+<title>Tips - BlankEclair's Spidersite</title>
+
+<style>
+:is(h1, h3) {
+    margin-block-end: 0;
+}
+:is(h1, h3) + p:has(small) {
+    margin-block: 0;
+}
+</style>
+</head>
+
+<body>
+<c:include>_header.ct</c:include>
+<c:markdown>
+# Tips
+<small>(Who needs a wiki when you can just spend your evening making a static site generator?)</small>
+
+Just a bundle of neat lil tech things I wanted to document _somewhere_.
+
+## Firefox
+
+### Allowing extensions to access restricted sites
+By default, Firefox prevents extensions from accessing or modifying the content of sites under domains such as addons.mozilla.org. You can remedy this by doing the following:
+1. Go to about:config
+2. Find `extensions.webextensions.restrictedDomains`
+3. Set it to an empty string
+
+### (Selectively) Disabling HSTS/HPKP
+<small>(Source: <https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning#How_to_use_pinning>)</small>
+1. Go to about:config`
+2. Find `security.cert_pinning.enforcement_level`
+3. Set it to:
+   * `0` to entirely disable HSTS
+   * `1` to disable HSTS if the certificate is signed by a user-added CA
+   * `2` to fully enable HSTS
+
+### Enabling the ability to manually add search engines
+<small>(Copied from [a Fediverse post](https://bark.lgbt/@rail_/112321713076445218) by [rail](https://bark.lgbt/@rail_))</small>
+1. Go to about:config
+2. Find `browser.urlbar.update2.engineAliasRefresh`
+3. Set it to `true`
+
+### Mobile: Enabling about:config on production builds
+<small>(Copied from [a Fediverse post](https://exquisite.social/@thomholwerda/112795429303595558) by [Itanium Thom](https://exquisite.social/@thomholwerda))</small>
+1. Go to chrome://geckoview/content/config.xhtml
+2. Find `general.aboutConfig.enable`
+3. Set it to `true`
+
+### Mobile: Enabling third-party CA certificates
+1. Go to the three-dot menu, and tap Settings
+2. Scroll down to the bottom, and tap "About Firefox"
+3. Tap the Firefox logo several times
+4. Go back, and tap "Secret Settings"
+5. Enable "Use third party CA certificates"
+</c:markdown>
+<c:include>_footer.ct</c:include>
+</body>
+</html>
