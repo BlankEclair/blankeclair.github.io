@@ -33,7 +33,7 @@ def _slugify(s: str) -> str:
     s = CONSECUTIVE_UNDERSCORES_RE.sub("_", s)
     return s.strip("_")
 
-HEADING_RE = re.compile(r"<h([1-6])>(.+?)</h\1>")
+HEADING_RE = re.compile(r"<h([2-6])>(.+?)</h\1>")
 def _make_heading_linkable(match: re.Match) -> str:
     level, text = match.groups()
     slug = _slugify(text)
