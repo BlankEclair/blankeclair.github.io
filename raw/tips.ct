@@ -5,11 +5,15 @@
 <title>Tips - BlankEclair's Spidersite</title>
 
 <style>
-:is(h1, h3) {
+:is(h1, h3, h4) {
     margin-block-end: 0;
 }
 :is(h1, h3) + p:has(small) {
     margin-block: 0;
+}
+
+img {
+    display: block;
 }
 </style>
 </head>
@@ -32,7 +36,7 @@ By default, Firefox prevents extensions from accessing or modifying the content 
 
 ### (Selectively) Disabling HSTS/HPKP
 <small>(Source: <https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning#How_to_use_pinning>)</small>
-1. Go to about:config`
+1. Go to about:config
 2. Find `security.cert_pinning.enforcement_level`
 3. Set it to:
    * `0` to entirely disable HSTS
@@ -54,9 +58,26 @@ By default, Firefox prevents extensions from accessing or modifying the content 
 ### Mobile: Enabling third-party CA certificates
 1. Go to the three-dot menu, and tap Settings
 2. Scroll down to the bottom, and tap "About Firefox"
-3. Tap the Firefox logo several times
+3. Tap the Firefox logo five times
 4. Go back, and tap "Secret Settings"
 5. Enable "Use third party CA certificates"
+
+## Matrix
+
+### Changing your room-specific display name or avatar
+Fun fact: Matrix has functionality for you to set your display name and/or avatar, but only for one room. This way, I can use something like "BlankEclair [she/her]" as my "default" display name, but then set it to something like "Claire" in a more personal chat.
+
+#### Instructions for nheko
+1. Open a room
+2. Click on the members icon (if unencrypted) or the shield icon (if encrypted) on the top-right of the program
+3. Click on your user account
+4. Click on the edit/pencil icons next to your name and/or your avatar, like so:
+   ![A screenshot of room-specific user profile. The profile has a display name of "BlankEclair [she/her]", a Matrix ID of "@blankeclair:catgirl.cloud", and the room it is in is named "Random Stuff". The mouse cursor is currently hovering over the edit icon next to the display name, which has a tooltip above it that reads "Change display name. Will only apply to this room."](/tips_images/matrix/change-room-profile/nheko.png)
+
+#### Instructions for Element Android
+1. Open a room
+2. Type /myroomnick and/or /myroomavatar—you should see something like the following:
+   ![A screenshot of the message box inside a room in Element. Entered in the message box is the string "/myroom", to which there are two auto-completed commands above. The first command reads "/myroomnick <display-name>: Changes your display nickname in the current room only", and the second commands reads "/myroomavatar <mxc_url>: Changes your avatar in this current room only"](/tips_images/matrix/change-room-profile/element.png)
 </c:markdown>
 <c:include>_footer.ct</c:include>
 </body>
