@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<c:include>_head_tags.ct</c:include>
+<title>Security Trinklets - BlankEclair's Spidersite</title>
+
+<style>
+h1 {
+    margin-block-end: 0;
+}
+h1 + p {
+    margin-block: 0;
+}
+
+li > p:first-child {
+    margin-bottom: 0;
+}
+li > p:nth-child(2) {
+    margin-top: 0;
+}
+</style>
+</head>
+
+<body>
+<c:include>_header.ct</c:include>
+<c:markdown>
+# Security Trinklets
+<small>In which Claire accidentally finds her third security vulnerability while trying to fix a bug</small>
+
+* 2024-06-01: Citizen: Stored XSS in MediaWiki:Tagline ([CVE-2024-36123](https://www.cve.org/CVERecord?id=CVE-2024-36123), [GHSA-jhm6-qjhq-5mf9](https://github.com/StarCitizenTools/mediawiki-skins-Citizen/security/advisories/GHSA-jhm6-qjhq-5mf9))
+
+  Due to accidentally calling `Message::text()` (which returns unparsed wikitext) instead of `Message::parse()` (which returns parsed wikitext as HTML), an administrator can edit MediaWiki:Tagline to inject an XSS payload for Citizen users
+
+* 2024-07-22: Cargo: Users can call arbitrary SQL functions ([T370632](https://phabricator.wikimedia.org/T370632))
+
+  Due to the regex used for detecting SQL functions not handling backticks, a user can inject backticks without Cargo noticing and preventing the query, allowing it to pass through the database
+
+* 2024-08-11: Cargo: Various stored, reflective, and DOM-based XSSes (primarily requiring high privileges, but some with low or none as well) ([T372211](https://phabricator.wikimedia.org/T372211))
+
+  Due to a systemic lack of escaping, users and administrators alike can inject XSS payloads
+
+* 2024-09-28: Citizen: Stored, self-XSS in user "real name" setting ([GHSA-62r2-gcxr-426x](https://github.com/StarCitizenTools/mediawiki-skins-Citizen/security/advisories/GHSA-62r2-gcxr-426x))
+
+  Due to a lack of escaping, a user can XSS themselves by setting an XSS payload in their "real name" field
+</c:markdown>
+<c:include>_footer.ct</c:include>
+</body>
+</html>
