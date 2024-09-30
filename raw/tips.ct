@@ -78,6 +78,14 @@ Fun fact: Matrix has functionality for you to set your display name and/or avata
 1. Open a room
 2. Type /myroomnick and/or /myroomavatar—you should see something like the following:
    ![A screenshot of the message box inside a room in Element. Entered in the message box is the string "/myroom", to which there are two auto-completed commands above. The first command reads "/myroomnick <display-name>: Changes your display nickname in the current room only", and the second commands reads "/myroomavatar <mxc_url>: Changes your avatar in this current room only"](/tips_images/matrix/change-room-profile/element.png)
+
+## Qt
+
+### Getting color emojis to render
+<small>(Source: <https://discussion.fedoraproject.org/t/qt-based-apps-use-low-quality-black-and-white-emoji/81017>)</small>
+
+1. Save [75-noto-color-emoji.conf](https://gist.githubusercontent.com/charveey/091b11ea554436d15c7fffcf01129a8a/raw/f135685cd8b5128ead7b9122613ac7bcb3f803c1/75-noto-color-emoji.conf) to /etc/fonts/conf.d/75-noto-color-emoji.conf
+2. Reopen your Qt apps
 </c:markdown>
 <c:include>_footer.ct</c:include>
 </body>
