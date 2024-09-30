@@ -39,7 +39,7 @@ li > p:nth-child(2) {
 
   Due to a systemic lack of escaping, users and administrators alike can inject XSS payloads
 
-* 2024-09-28: Citizen: Stored, self-XSS in user "real name" setting ([GHSA-62r2-gcxr-426x](https://github.com/StarCitizenTools/mediawiki-skins-Citizen/security/advisories/GHSA-62r2-gcxr-426x))
+* 2024-09-28: Citizen: Stored, self-XSS in user "real name" setting ([CVE-2024-47536](https://www.cve.org/CVERecord?id=CVE-2024-47536), [GHSA-62r2-gcxr-426x](https://github.com/StarCitizenTools/mediawiki-skins-Citizen/security/advisories/GHSA-62r2-gcxr-426x))
 
   Due to a lack of escaping, a user can XSS themselves by setting an XSS payload in their "real name" field
 </c:markdown>
