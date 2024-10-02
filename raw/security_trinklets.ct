@@ -35,6 +35,10 @@ li > p:nth-child(2) {
 
   Due to the regex used for detecting SQL functions not handling backticks, a user can inject backticks without Cargo noticing and preventing the query, allowing it to pass through the database
 
+* 2024-08-11: Cargo: No CSRF protection on Special:DeleteCargoTable and Special:SwitchCargoTable ([T372209](https://phabricator.wikimedia.org/T372209))
+
+  Due to Cargo not checking the CSRF token (also called an "edit token" in MediaWiki), administrators can be tricked into deleting and switching in tables by simply travelling to a link with the "delete" or "switch" URL query parameter
+
 * 2024-08-11: Cargo: Various stored, reflective, and DOM-based XSSes (primarily requiring high privileges, but some with low or none as well) ([T372211](https://phabricator.wikimedia.org/T372211))
 
   Due to a systemic lack of escaping, users and administrators alike can inject XSS payloads
