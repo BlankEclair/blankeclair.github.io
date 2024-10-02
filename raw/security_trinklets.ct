@@ -58,6 +58,13 @@ li > p:nth-child(2) {
 
   [CVE-2024-47536]: https://www.cve.org/CVERecord?id=CVE-2024-47536
   [GHSA-62r2-gcxr-426x]: https://github.com/StarCitizenTools/mediawiki-skins-Citizen/security/advisories/GHSA-62r2-gcxr-426x
+
+* 2024-10-01: Datadump: Stored XSS in Special:DataDump when outputting dump status ([GHSA-h8x8-24c7-r2rj], [T12670])
+
+  Due to a lack of escaping, an administrator can edit some interface messages to XSS those who can view Special:DataDump
+
+  [GHSA-h8x8-24c7-r2rj]: https://github.com/miraheze/DataDump/security/advisories/GHSA-h8x8-24c7-r2rj
+  [T12670]: https://issue-tracker.miraheze.org/T12670
 </c:markdown>
 <c:include>_footer.ct</c:include>
 </body>
