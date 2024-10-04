@@ -34,6 +34,12 @@ li > p:nth-child(2) {
   [CVE-2024-36123]: https://www.cve.org/CVERecord?id=CVE-2024-36123
   [GHSA-jhm6-qjhq-5mf9]: https://github.com/StarCitizenTools/mediawiki-skins-Citizen/security/advisories/GHSA-jhm6-qjhq-5mf9
 
+* 2024-07-08: CSS: Path traversal when loading local stylesheets ([T369486])
+
+  Due to inadequete URL parsing, it is possible to use backslashes to avoid the path traversal being detected and prevented while still having spec-compliant browsers travel one folder up.
+
+  [T369486]: https://phabricator.wikimedia.org/T369486
+
 * 2024-07-22: Cargo: Users can call arbitrary SQL functions ([T370632])
 
   Due to the regex used for detecting SQL functions not handling backticks, a user can inject backticks without Cargo noticing and preventing the query, allowing it to pass through the database
