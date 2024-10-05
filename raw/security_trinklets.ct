@@ -34,28 +34,32 @@ li > p:nth-child(2) {
   [CVE-2024-36123]: https://www.cve.org/CVERecord?id=CVE-2024-36123
   [GHSA-jhm6-qjhq-5mf9]: https://github.com/StarCitizenTools/mediawiki-skins-Citizen/security/advisories/GHSA-jhm6-qjhq-5mf9
 
-* 2024-07-08: CSS: Path traversal when loading local stylesheets ([T369486])
+* 2024-07-08: CSS: Path traversal when loading local stylesheets ([CVE-2024-47841], [T369486])
 
   Due to inadequete URL parsing, it is possible to use backslashes to avoid the path traversal being detected and prevented while still having spec-compliant browsers travel one folder up.
 
+  [CVE-2024-47841]: https://www.cve.org/CVERecord?id=CVE-2024-47841
   [T369486]: https://phabricator.wikimedia.org/T369486
 
-* 2024-07-22: Cargo: Users can call arbitrary SQL functions ([T370632])
+* 2024-07-22: Cargo: Users can call arbitrary SQL functions ([CVE-2024-47849], [T370632])
 
   Due to the regex used for detecting SQL functions not handling backticks, a user can inject backticks without Cargo noticing and preventing the query, allowing it to pass through the database
 
+  [CVE-2024-47849]: https://www.cve.org/CVERecord?id=CVE-2024-47849
   [T370632]: https://phabricator.wikimedia.org/T370632
 
-* 2024-08-11: Cargo: No CSRF protection on Special:DeleteCargoTable and Special:SwitchCargoTable ([T372209])
+* 2024-08-11: Cargo: No CSRF protection on Special:DeleteCargoTable and Special:SwitchCargoTable ([CVE-2024-47846], [T372209])
 
   Due to Cargo not checking the CSRF token (also called an "edit token" in MediaWiki), administrators can be tricked into deleting and switching in tables by simply travelling to a link with the "delete" or "switch" URL query parameter
 
+  [CVE-2024-47846]: https://www.cve.org/CVERecord?id=CVE-2024-47846
   [T372209]: https://phabricator.wikimedia.org/T372209
 
-* 2024-08-11: Cargo: Various stored, reflective, and DOM-based XSSes (primarily requiring high privileges, but some with low or none as well) ([T372211])
+* 2024-08-11: Cargo: Various stored, reflective, and DOM-based XSSes (primarily requiring high privileges, but some with low or none as well) ([CVE-2024-47847], [T372211])
 
   Due to a systemic lack of escaping, users and administrators alike can inject XSS payloads
 
+  [CVE-2024-47847]: https://www.cve.org/CVERecord?id=CVE-2024-47847
   [T372211]: https://phabricator.wikimedia.org/T372211
 
 * 2024-09-28: Citizen: Stored, self-XSS in user "real name" setting ([CVE-2024-47536], [GHSA-62r2-gcxr-426x])
