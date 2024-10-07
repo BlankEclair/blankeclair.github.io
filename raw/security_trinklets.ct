@@ -27,12 +27,23 @@ li > p:nth-child(2) {
 # Security Trinklets
 <small>In which Claire accidentally finds her third security vulnerability while trying to fix a bug</small>
 
+Dates shown are when I reported the issue
+
 * 2024-06-01: Citizen: Stored XSS in MediaWiki:Tagline ([CVE-2024-36123], [GHSA-jhm6-qjhq-5mf9])
 
   Due to accidentally calling `Message::text()` (which returns unparsed wikitext) instead of `Message::parse()` (which returns parsed wikitext as HTML), an administrator can edit MediaWiki:Tagline to inject an XSS payload for Citizen users
 
   [CVE-2024-36123]: https://www.cve.org/CVERecord?id=CVE-2024-36123
   [GHSA-jhm6-qjhq-5mf9]: https://github.com/StarCitizenTools/mediawiki-skins-Citizen/security/advisories/GHSA-jhm6-qjhq-5mf9
+
+* 2024-07-08: CSS: CSS sanitization bypass through @import ([CVE-2024-47845], [T368594])
+
+  Due to using a function not meant for sanitizing CSS files, anyone who can edit pages can add a crafted CSS file that loads another CSS file from a remote server, bypassing sanitization and leaking the viewer's IP address along the way
+
+  (Originally discovered by [Bawolff](https://phabricator.wikimedia.org/p/Bawolff/) on 2024-06-27)
+
+  [CVE-2024-47845]: https://www.cve.org/CVERecord?id=CVE-2024-47845
+  [T368594]: https://phabricator.wikimedia.org/T368594
 
 * 2024-07-08: CSS: Path traversal when loading local stylesheets ([CVE-2024-47841], [T369486])
 
@@ -76,6 +87,22 @@ li > p:nth-child(2) {
   [CVE-2024-47612]: https://www.cve.org/CVERecord?id=CVE-2024-47612
   [GHSA-h8x8-24c7-r2rj]: https://github.com/miraheze/DataDump/security/advisories/GHSA-h8x8-24c7-r2rj
   [T12670]: https://issue-tracker.miraheze.org/T12670
+
+* 2024-10-04: CreateWiki: Stored XSS in Special:RequestWikiQueue when displaying sitename ([CVE-2024-47781], [GHSA-h527-jh77-5g7j], [T12693])
+
+  Due to a lack of escaping, anyone who can request a wiki (the ability of which is freely granted to new users) can set an XSS payload as their requested wiki name
+
+  [CVE-2024-47781]: https://www.cve.org/CVERecord?id=CVE-2024-47781
+  [GHSA-h527-jh77-5g7j]: https://github.com/miraheze/CreateWiki/security/advisories/GHSA-h527-jh77-5g7j
+  [T12693]: https://issue-tracker.miraheze.org/T12693
+
+* 2024-10-04: WikiDiscover: Stored XSS in Special:WikiDiscover when displaying wiki information ([CVE-2024-47782], [GHSA-wf48-rqx3-39mf], [T12697])
+
+  Due to a lack of escaping, anyone who can modify a wiki's name and description (which is easy to achieve, since it is relatively simple to create a wiki) can XSS anyone who views Special:WikiDiscover
+
+  [CVE-2024-47782]: https://www.cve.org/CVERecord?id=CVE-2024-47782
+  [GHSA-wf48-rqx3-39mf]: https://github.com/miraheze/CreateWiki/security/advisories/GHSA-wf48-rqx3-39mf
+  [T12697]: https://issue-tracker.miraheze.org/T12697
 </c:markdown>
 <c:include>_footer.ct</c:include>
 </body>
