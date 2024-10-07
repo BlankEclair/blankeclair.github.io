@@ -101,7 +101,7 @@ Dates shown are when I reported the issue
   Due to a lack of escaping, anyone who can modify a wiki's name and description (which is easy to achieve, since it is relatively simple to create a wiki) can XSS anyone who views Special:WikiDiscover
 
   [CVE-2024-47782]: https://www.cve.org/CVERecord?id=CVE-2024-47782
-  [GHSA-wf48-rqx3-39mf]: https://github.com/miraheze/CreateWiki/security/advisories/GHSA-wf48-rqx3-39mf
+  [GHSA-wf48-rqx3-39mf]: https://github.com/miraheze/WikiDiscover/security/advisories/GHSA-wf48-rqx3-39mf
   [T12697]: https://issue-tracker.miraheze.org/T12697
 </c:markdown>
 <c:include>_footer.ct</c:include>
