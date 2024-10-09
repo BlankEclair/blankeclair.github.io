@@ -103,6 +103,30 @@ Dates shown are when I reported the issue
   [CVE-2024-47782]: https://www.cve.org/CVERecord?id=CVE-2024-47782
   [GHSA-wf48-rqx3-39mf]: https://github.com/miraheze/WikiDiscover/security/advisories/GHSA-wf48-rqx3-39mf
   [T12697]: https://issue-tracker.miraheze.org/T12697
+
+* 2024-10-04: ImportDump: Stored XSS in Special:RequestImportQueue when displaying timestamp ([CVE-2024-47812], [GHSA-465h-45v4-6fx9], [T12698])
+
+  Due to a lack of escaping, anyone who can modify interface messages can inject XSS payloads into Special:RequestImportQueue when it displays the timestamp of a request
+
+  [CVE-2024-47812]: https://www.cve.org/CVERecord?id=CVE-2024-47812
+  [GHSA-465h-45v4-6fx9]: https://github.com/miraheze/ImportDump/security/advisories/GHSA-465h-45v4-6fx9
+  [T12698]: https://issue-tracker.miraheze.org/T12698
+
+* 2024-10-04: ImportDump: Users can impersonate import requesters if their actor IDs coincide ([CVE-2024-47816], [GHSA-jjmq-mg36-6387], [T12701])
+
+  Since Special:RequestImportQueue was available on all wikis, due to the code storing and comparing the local actor IDs instead of CentralAuth IDs, users whose local actor IDs happen to coincide can comment and edit the request as if they're the requester
+
+  [CVE-2024-47816]: https://www.cve.org/CVERecord?id=CVE-2024-47816
+  [GHSA-jjmq-mg36-6387]: https://github.com/miraheze/ImportDump/security/advisories/GHSA-jjmq-mg36-6387
+  [T12701]: https://issue-tracker.miraheze.org/T12701
+
+* 2024-10-04: IncidentReporting: Various stored XSSes in Special:IncidentReports ([CVE-2024-47815], [GHSA-9p36-hrmr-98r9], [T12702])
+
+  Due to a systemic lack of escaping, anyone who can create incident reports and/or those who can edit interface messages can inject XSS payloads into various parts of Special:IncidentReports
+
+  [CVE-2024-47815]: https://www.cve.org/CVERecord?id=CVE-2024-47815
+  [GHSA-9p36-hrmr-98r9]: https://github.com/miraheze/IncidentReporting/security/advisories/GHSA-9p36-hrmr-98r9
+  [T12702]: https://issue-tracker.miraheze.org/T12702
 </c:markdown>
 <c:include>_footer.ct</c:include>
 </body>
