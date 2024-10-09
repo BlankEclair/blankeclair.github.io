@@ -28,6 +28,10 @@ a:hover {
     color: var(--accent-color-bright);
 }
 
+code, pre {
+    white-space: pre-wrap;
+}
+
 .permalink a {
     text-decoration: none;
     opacity: 0;
