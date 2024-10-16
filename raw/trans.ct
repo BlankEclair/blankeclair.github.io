@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<c:include>_head_tags.ct</c:include>
+<title>Trans Resources - BlankEclair's Spidersite</title>
+</head>
+
+<body class="trans">
+<c:include>_header.ct</c:include>
+<c:markdown>
+# Trans Resources
+
+A collection of neat lil &#x1F3F3;&#xFE0F;&#x200D;&#x26A7;&#xFE0F; things that I currently or have read in alphabetical order, along with other resources
+
+## Blogs
+* [Curvy and Trans](https://curvyandtrans.com): A (seemingly dead?) personal blog mostly about trans topics, but also includes other topics such as the general LGBTQ community and mental health
+* [Stained Glass Woman](https://stainedglasswoman.substack.com): A weekly publication/newsletter primarily about being trans; includes some science posts, some informative posts, and generally a variety other trans-related posts
+* [Tilly's Trans Tuesdays](https://www.tillystranstuesdays.com): A weekly blog chronicling what trans people experience every day, in addition to trans education posts
+
+## Webcomics
+* [I want to be a cute anime girl](https://www.webtoons.com/en/canvas/i-want-to-be-a-cute-anime-girl/list?title_no=349416): A comic about a trans girl, Cheryl, trying to figure out her identity and future as she realizes that she is trans; focuses mostly on trans joy
+* [My Impossible Soulmate](https://rainverse.wiki/wiki/My_Impossible_Soulmate): A comic about a demiromantic lesbian, Chiaki Koizumi, trying to live and belong in another world that she fell into, as she tries to find a way to go back into her world so that she can confess her crush to her childhood friend
+* [Rain](https://rainverse.wiki/wiki/Rain_(comic)): A comic about a young trans woman, Rain Flaherty, trying to graduate high school while presenting as a girl for her senior year; also just queer in general
+* [The Prettiest Platypus](https://www.webtoons.com/en/canvas/the-prettiest-platypus/list?title_no=463063): A comic about a trans girl, Lillie, figuring out herself and her future despite transphobia with the help of her friends and sister
+
+## Reading
+* [Gender Dysphoria Bible](https://genderdysphoria.fyi): An essay on what gender euphoria and gender dysphoria is, along with the subtypes of dysphoria; includes information about the effects HRT and a collection of trans-related tweets
+* [Nonbinary Wiki](https://nonbinary.wiki): A wiki dedicated to non-binary identities and information on transitioning
+
+## Other Resources
+* [Global Transgender Resources Registry](https://gtrr.artemislena.eu): Links to a variety of resources, including summaries about the law, lists of medical clinics, and local support groups
+* [w/trans/resources](https://raddle.me/wiki/trans/resources): A tiny wiki on Raddle, a small Reddit competitor, that contains links to other trans-related resources
+</c:markdown>
+<c:include>_footer.ct</c:include>
+</body>
+</html>
