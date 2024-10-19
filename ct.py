@@ -20,6 +20,7 @@ import re
 import ast
 import html # Not needed, but helpful for <c:python>
 import textwrap
+from collections import defaultdict
 import commonmark
 
 # 100% proper parser, don't @ me
@@ -34,9 +35,14 @@ def _slugify(s: str) -> str:
     return s.strip("_")
 
 HEADING_RE = re.compile(r"<h([2-6])>(.+?)</h\1>")
-def _make_heading_linkable(match: re.Match) -> str:
+def _make_heading_linkable(match: re.Match, used_headings: defaultdict[str, int]) -> str:
     level, text = match.groups()
     slug = _slugify(text)
+
+    used_count = used_headings[slug]
+    if used_count:
+        slug += f"_{used_count + 1}"
+    used_headings[slug] += 1
 
     return (f'<h{level} id="{slug}">'
             f'{text}'
@@ -57,7 +63,10 @@ def _handle_tag(match: re.Match, locals: dict[str]) -> str:
             return body
         case "markdown":
             body = commonmark.commonmark(body)
-            return HEADING_RE.sub(_make_heading_linkable, body)
+
+            def heading_re_callback(match: re.Match) -> str:
+                return _make_heading_linkable(match, locals["ct_used_heading_slugs"])
+            return HEADING_RE.sub(heading_re_callback, body)
         case "python":
             # https://greentreesnakes.readthedocs.io/
             tree = ast.parse(body)
@@ -74,5 +83,10 @@ def _handle_tag(match: re.Match, locals: dict[str]) -> str:
             raise ValueError(f'Unknown tag "c:{match.group(1)}"')
 
 def parse(s: str, locals: dict[str] | None = None) -> str:
-    locals = locals if locals is not None else {}
-    return CUSTOM_TAG_RE.sub(lambda match: _handle_tag(match, locals), s)
+    new_locals = {
+        "ct_used_heading_slugs": defaultdict(int),
+    }
+    if locals is not None:
+        new_locals.update(locals)
+
+    return CUSTOM_TAG_RE.sub(lambda match: _handle_tag(match, new_locals), s)
