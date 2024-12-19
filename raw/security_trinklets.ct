@@ -134,6 +134,12 @@ Dates shown are when I reported the issue
   [CVE-2024-47815]: https://www.cve.org/CVERecord?id=CVE-2024-47815
   [GHSA-9p36-hrmr-98r9]: https://github.com/miraheze/IncidentReporting/security/advisories/GHSA-9p36-hrmr-98r9
   [T12702]: https://issue-tracker.miraheze.org/T12702
+
+* 2024-12-12: BreadCrumbs2: XSS when outputting display title ([T382043])
+
+  Due to a lack of escaping, anyone who can edit pages can inject arbitrary HTML (and thus JavaScript) by setting the display name of a page
+
+  [T382043]: https://phabricator.wikimedia.org/T382043
 </c:markdown>
 <c:include>_footer.ct</c:include>
 </body>
