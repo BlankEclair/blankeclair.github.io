@@ -141,10 +141,11 @@ Dates shown are when I reported the issue
 
   [T382043]: https://phabricator.wikimedia.org/T382043
 
-* 2025-01-04: TabberNeue: XSS in error output for &lt;tabbertransclude&gt; ([GHSA-4x6x-8rm8-c37j])
+* 2025-01-04: TabberNeue: XSS in error output for &lt;tabbertransclude&gt; ([CVE-2025-21612], [GHSA-4x6x-8rm8-c37j])
 
   Due to a lack of escaping, anyone who can render wikitext (e.g. by viewing a page or via Special:ExpandTemplates) can use an XSS payload as the title of a page to XSS the user.
 
+  [CVE-2025-21612]: https://www.cve.org/CVERecord?id=CVE-2025-21612
   [GHSA-4x6x-8rm8-c37j]: https://github.com/StarCitizenTools/mediawiki-extensions-TabberNeue/security/advisories/GHSA-4x6x-8rm8-c37j
 </c:markdown>
 <c:include>_footer.ct</c:include>
