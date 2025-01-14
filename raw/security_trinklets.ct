@@ -135,6 +135,13 @@ Dates shown are when I reported the issue
   [GHSA-9p36-hrmr-98r9]: https://github.com/miraheze/IncidentReporting/security/advisories/GHSA-9p36-hrmr-98r9
   [T12702]: https://issue-tracker.miraheze.org/T12702
 
+* 2024-11-03: RefreshSpecial: Various stored XSSes from system messages in Special:RefreshSpecial ([CVE-2025-23072], [T378885])
+
+  Due to a lack of escaping, there were various stored XSSes on Special:RefreshSpecial when system messages are mistakenly treated as HTML
+
+  [CVE-2025-23072]: https://www.cve.org/CVERecord?id=CVE-2025-23072
+  [T378885]: https://phabricator.wikimedia.org/T378885
+
 * 2024-11-13: DataTransfer: Various stored XSSes from system messages, missing CSRF protection, and blocked admins can edit pages ([CVE-2025-23081], [T379749])
 
   Due to a systemic lack of escaping, there were various stored XSSes in the extension's special pages when system messages are improperly treated as HTML. Additionally, CSRF and block protection was missing
