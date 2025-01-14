@@ -163,10 +163,11 @@ Dates shown are when I reported the issue
   [CVE-2025-23079]: https://www.cve.org/CVERecord?id=CVE-2025-23079
   [T381753]: https://phabricator.wikimedia.org/T381753
 
-* 2024-12-12: BreadCrumbs2: XSS when outputting display title ([T382043])
+* 2024-12-12: BreadCrumbs2: XSS when outputting display title ([CVE-2025-23078], [T382043])
 
   Due to a lack of escaping, anyone who can edit pages can inject arbitrary HTML (and thus JavaScript) by setting the display name of a page
 
+  [CVE-2025-23078]: https://www.cve.org/CVERecord?id=CVE-2025-23078
   [T382043]: https://phabricator.wikimedia.org/T382043
 
 * 2025-01-04: TabberNeue: XSS in error output for &lt;tabbertransclude&gt; ([CVE-2025-21612], [GHSA-4x6x-8rm8-c37j])
