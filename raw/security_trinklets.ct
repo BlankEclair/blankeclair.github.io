@@ -135,6 +135,13 @@ Dates shown are when I reported the issue
   [GHSA-9p36-hrmr-98r9]: https://github.com/miraheze/IncidentReporting/security/advisories/GHSA-9p36-hrmr-98r9
   [T12702]: https://issue-tracker.miraheze.org/T12702
 
+* 2024-12-01: OpenBadges: XSSes in Special:BadgeView ([CVE-2025-23080], [T381220])
+
+  Due to a lack of escaping, certain system messages can cause XSSes when used on Special:BadgeView
+
+  [CVE-2025-23080]: https://www.cve.org/CVERecord?id=CVE-2025-23080
+  [T381220]: https://phabricator.wikimedia.org/T381220
+
 * 2024-12-09: ArticleFeedbackv5: Various stored XSSes ([T381753])
 
   Due to a systemic lack of escaping, those who can edit interface messages can XSS various users
