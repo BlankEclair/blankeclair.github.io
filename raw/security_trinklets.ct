@@ -135,6 +135,13 @@ Dates shown are when I reported the issue
   [GHSA-9p36-hrmr-98r9]: https://github.com/miraheze/IncidentReporting/security/advisories/GHSA-9p36-hrmr-98r9
   [T12702]: https://issue-tracker.miraheze.org/T12702
 
+* 2024-11-13: DataTransfer: Various stored XSSes from system messages, missing CSRF protection, and blocked admins can edit pages ([CVE-2025-23081], [T379749])
+
+  Due to a systemic lack of escaping, there were various stored XSSes in the extension's special pages when system messages are improperly treated as HTML. Additionally, CSRF and block protection was missing
+
+  [CVE-2025-23081]: https://www.cve.org/CVERecord?id=CVE-2025-23081
+  [T379749]: https://phabricator.wikimedia.org/T379749
+
 * 2024-12-01: OpenBadges: XSSes in Special:BadgeView ([CVE-2025-23080], [T381220])
 
   Due to a lack of escaping, certain system messages can cause XSSes when used on Special:BadgeView
