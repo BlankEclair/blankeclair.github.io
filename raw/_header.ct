@@ -1,5 +1,11 @@
 <div class="header">
 <div class="trans"></div>
-<a href="/">Home</a> &middot; <a href="/accounts.html">Accounts</a> &middot; <a href="/tools.html">Tools</a> &middot; <a href="/tips.html">Tips</a> &middot; <a href="/security_trinklets.html">Security Trinklets</a> &middot; <a href="/trans.html">Trans Resources</a>
+<a href="/">Home</a>
+&middot; <a href="/accounts.html">Accounts</a>
+&middot; <a href="/tools.html">Tools</a>
+&middot; <a href="/tips.html">Tips</a>
+&middot; <a href="/howto/">How to</a>
+&middot; <a href="/security_trinklets.html">Security Trinklets</a>
+&middot; <a href="/trans.html">Trans Resources</a>
 <hr>
 </div>

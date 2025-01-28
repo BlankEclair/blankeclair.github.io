@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<c:include>_head_tags.ct</c:include>
+<title>How to - BlankEclair's Spidersite</title>
+</head>
+
+<body>
+<c:include>_header.ct</c:include>
+<c:markdown>
+# How to
+
+A list of simple documents explaining how to do some stuff :p
+<br>(Inspired by <https://average.name/ways>)
+
+* [How to setup WireGuard as an internal VPN](wireguard.html) (2025-01-28)
+</c:markdown>
+<c:include>_footer.ct</c:include>
+</body>
+</html>

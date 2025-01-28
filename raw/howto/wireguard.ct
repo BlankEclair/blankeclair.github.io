@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<c:include>_head_tags.ct</c:include>
+<title>How to setup WireGuard as an internal VPN - BlankEclair's Spidersite</title>
+</head>
+
+<body>
+<c:include>_header.ct</c:include>
+<c:markdown>
+# How to setup WireGuard as an internal VPN
+Created: 2025-01-28
+
+This page will describe the setup for one server and one client.
+
+It assumes that you will use port 4242 for WireGuard, 10.42.0.0/24 for the internal IP space, 10.42.0.1 for the server, and 10.42.0.2 for the client.
+However, it does not setup internal IPv6.
+
+## Installation
+Install the userspace WireGuard utilities. For Arch, this will be the `wireguard-tools` package.
+
+## Setup the server
+On the server, generate its WireGuard keypair:
+```shell
+# cd /etc/wireguard
+# umask 077
+# wg genkey > privkey
+# wg pubkey < privkey > pubkey
+```
+
+On the server, save the following:
+```file
+/etc/wireguard/wg0.conf
+```
+```ini
+[Interface]
+Address = 10.42.0.1/24
+SaveConfig = true
+ListenPort = 4242
+Privatekey = <contents of /etc/wireguard/privkey>
+```
+
+To allow client-to-client communication inside the tunnel, we need to allow IP forwarding.
+<br>On the server, save the following:
+```file
+/etc/sysctl.d/ip-forward.conf
+```
+```
+net.ipv4.ip_forward=1
+net.ipv6.conf.all.forwarding=1
+```
+
+The above will only apply it on boot. To enable forwarding at runtime, run on the server:
+```shell
+# sysctl net.ipv4.ip_forward=1 net.ipv6.conf.all.forwarding=1
+```
+
+Start the server:
+```shell
+# systemctl start wg-quick@wg0
+```
+
+## Setup the client
+On the client, generate the WireGuard keypair:
+```shell
+# cd /etc/wireguard
+# umask 077
+# wg genkey > privkey
+# wg pubkey < privkey > pubkey
+```
+
+On the client, save the following:
+```file
+/etc/wireguard/wg0.conf
+```
+```ini
+[Interface]
+PrivateKey = <contents of /etc/wireguard/privkey>
+Address = 10.42.0.2/24
+
+[Peer]
+PublicKey = <contents of server's /etc/wireguard/pubkey>
+EndPoint = <server ip>:4242
+AllowedIPs = 10.42.0.0/24
+PersistentKeepalive = 25
+```
+
+Setting `PersistentKeepalive = 25` will alleivate potential problems if NAT is involved. For more information, see "[Unable to establish a persistent connection behind NAT / firewall](https://wiki.archlinux.org/title/WireGuard#Unable_to_establish_a_persistent_connection_behind_NAT_/_firewall)".
+
+We need to authorise the client to connect to the server. To do that, run on the server:
+```shell
+# wg set wg0 peer <contents of client's /etc/wireguard/pubkey> persistent-keepalive 25 allowed-ips 10.42.0.2/32
+```
+
+Now, start the tunnel on the client:
+```shell
+# systemctl start wg-quick@wg0
+```
+
+## Check for connectivity
+On the client, try:
+```shell
+$ ping 10.42.0.1
+```
+
+Likewise, on the server:
+```shell
+$ ping 10.42.0.2
+```
+
+If they fail... idk, good luck have fun?
+</c:markdown>
+<c:include>_footer.ct</c:include>
+</body>
+</html>
