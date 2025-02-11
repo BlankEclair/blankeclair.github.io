@@ -92,6 +92,16 @@ Fun fact: Matrix has functionality for you to set your display name and/or avata
 ### Journal has truncated messages from a service when it tries to output a lot of messages
 <small>(Source: <https://serverfault.com/questions/774809/truncated-missing-logs-with-systemd-on-ubuntu-16-04>)</small>
 
+This can manifest as messages simply Disappearing, such as:
+```
+Feb 10 00:01:47 icecone sh[3456344]: +    /srv/http/rainverse.icecone/w/tests/phpunit/data/exception/
+Feb 10 00:01:47 icecone sh[3456344]: +    /srv/http/rainverse.icecone/w/tests/phpunit/data/exception/TestThrowerDummy.php
+Feb 10 00:01:47 icecone sh[3456344]: +    /srv/http/rainverse.icecone/w/tests/phpunit/data/filecontentshasher/
+Feb 10 00:01:59 icecone systemd[1]: restic-backup.service: Deactivated successfully.
+Feb 10 00:01:59 icecone systemd[1]: Finished Restic backups.
+Feb 10 00:01:59 icecone systemd[1]: restic-backup.service: Consumed 2min 27.510s CPU time, 1.5G memory peak.
+```
+
 This is (likely, because I have not yet confirmed it) because of a systemd-journald feature that drops messages once there is a big burst of them. To globally disable this feature, edit the journal configuration to add the following:
 ```file
 /etc/systemd/journald.conf
