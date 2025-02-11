@@ -86,6 +86,30 @@ Fun fact: Matrix has functionality for you to set your display name and/or avata
 
 1. Save [75-noto-color-emoji.conf](https://gist.githubusercontent.com/charveey/091b11ea554436d15c7fffcf01129a8a/raw/f135685cd8b5128ead7b9122613ac7bcb3f803c1/75-noto-color-emoji.conf) to /etc/fonts/conf.d/75-noto-color-emoji.conf
 2. Reopen your Qt apps
+
+## systemd
+
+### Journal has truncated messages from a service when it tries to output a lot of messages
+<small>(Source: <https://serverfault.com/questions/774809/truncated-missing-logs-with-systemd-on-ubuntu-16-04>)</small>
+
+This is (likely, because I have not yet confirmed it) because of a systemd-journald feature that drops messages once there is a big burst of them. To globally disable this feature, edit the journal configuration to add the following:
+```file
+/etc/systemd/journald.conf
+```
+```ini
+# ...
+#RateLimitIntervalSec=30s
+RateLimitBurst=0
+# ...
+```
+
+Afterwards, reload the config by restarting the daemon:
+```shell
+# systemctl restart systemd-journald
+```
+
+For more information, see the `RateLimitIntervalSec` and `RateLimitBurst` parameters in [journald.conf(5)](https://man.archlinux.org/man/journald.conf.5).
+
 </c:markdown>
 <c:include>_footer.ct</c:include>
 </body>
