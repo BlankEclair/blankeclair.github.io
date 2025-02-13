@@ -185,10 +185,11 @@ Dates shown are when I reported the issue
   [credit]: https://www.wikiskripta.eu/index.php?title=F%C3%B3rum:Bezpe%C4%8Dnost&diff=492736&oldid=469524
   [T13063]: https://issue-tracker.miraheze.org/T13063
 
-* 2025-02-13: Lakeus: Low-severity stored XSSes from system messages ([GHSA-mq77-3q68-v64v])
+* 2025-02-13: Lakeus: Low-severity stored XSSes from system messages ([CVE-2025-25287], [GHSA-mq77-3q68-v64v])
 
   Due to a systemic lack of escaping, those who can edit system messages can XSS viewers
 
+  [CVE-2025-25287]: https://www.cve.org/CVERecord?id=CVE-2025-25287
   [GHSA-mq77-3q68-v64v]: https://github.com/lakejason0/mediawiki-skins-Lakeus/security/advisories/GHSA-mq77-3q68-v64v
 </c:markdown>
 <c:include>_footer.ct</c:include>
