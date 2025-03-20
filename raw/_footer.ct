@@ -1,4 +1,9 @@
 <hr>
+<p>
+    <a href="https://webring.wiki/previous?host=claire.sharkgirl.ing">←</a>
+    <a href="https://webring.wiki/">webring.wiki</a>
+    <a href="https://webring.wiki/next?host=claire.sharkgirl.ing">→</a>
+</p>
 <c:markdown>
 The source code to this website is under the [MIT license](/LICENSE.MIT.txt).
 <br>Unless otherwise specified, the text and images on this site are under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
